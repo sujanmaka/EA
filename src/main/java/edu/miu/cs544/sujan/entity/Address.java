@@ -1,16 +1,9 @@
 package edu.miu.cs544.sujan.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Entity
-@Table(name = "address")
+@Embeddable
 public class Address {
-    @Id
-    @GeneratedValue
-    private Long id;
 
     private String street;
     private String city;

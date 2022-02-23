@@ -11,7 +11,7 @@ public class Company {
     private Long id;
 
     private String name;
-    @OneToOne(cascade = CascadeType.PERSIST,targetEntity = Address.class)
+    @Embedded
     private Address address;
 
     public Company() {
