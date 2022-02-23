@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="JOB_PU">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>edu.miu.cs544.sujan.entity.Job</class>
+        <class>edu.miu.cs544.sujan.entity.Application</class>
+        <class>edu.miu.cs544.sujan.entity.Skill</class>
+        <class>edu.miu.cs544.sujan.entity.Company</class>
+        <class>edu.miu.cs544.sujan.entity.Address</class>
+        <class>edu.miu.cs544.sujan.entity.Client</class>
+        <class>edu.miu.cs544.sujan.entity.Recruiter</class>
+        <class>edu.miu.cs544.sujan.entity.Interview</class>
+        <class>edu.miu.cs544.sujan.entity.ScreeningInterview</class>
+        <class>edu.miu.cs544.sujan.entity.TechnicalInterview</class>
+        <class>edu.miu.cs544.sujan.entity.HiringManagerInterview</class>
+        <class>edu.miu.cs544.sujan.entity.Question</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/cs544db"/>
+            <property name="javax.persistence.jdbc.user" value="ea"/>
+            <property name="javax.persistence.jdbc.password" value="cs544"/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+        </properties>
+    </persistence-unit>
+</persistence>
