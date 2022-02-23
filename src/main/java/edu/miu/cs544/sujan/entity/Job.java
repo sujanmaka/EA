@@ -16,6 +16,9 @@ public class Job {
     @ManyToOne(cascade = CascadeType.PERSIST,targetEntity = Company.class)
     private Company company;
 
+    @OneToMany(cascade = CascadeType.PERSIST, targetEntity = Interview.class)
+    private List<Interview> interviews;
+
     public Job() {
     }
 
@@ -30,5 +33,9 @@ public class Job {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public void setInterviews(List<Interview> interviews) {
+        this.interviews = interviews;
     }
 }

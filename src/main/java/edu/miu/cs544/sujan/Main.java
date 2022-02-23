@@ -17,10 +17,36 @@ public class Main {
         tx.begin();
 
 
-        Job job = new Job("Developer", 200000);
+//        setData(em);
+        tx.commit();
+        em.close();
+        emf.close();
+    }
+
+    private static void setData(EntityManager em) {
+        ScreeningInterview screeningInterview =
+                new ScreeningInterview(new Date(), "6418191456", "smaka@miu.edu", "sujan", "passed");
+        em.persist(screeningInterview);
+
+        TechnicalInterview technicalInterview =
+                new TechnicalInterview(new Date(), "6517892354", "jenny@miu.edu", 20, Location.IN_PERSON, Arrays.asList(new Question("What is your weakness?"), new Question("What is your strength?")));
+        em.persist(technicalInterview);
+
+        HiringManagerInterview hiringManagerInterview =
+                new HiringManagerInterview(new Date(), "2341222334", "srk@miu.edu", 10, new Date());
+        em.persist(hiringManagerInterview);
+
+
+        Job job1 = new Job("Developer", 200000);
+        Job job2 = new Job("Manager", 200000);
+        job1.setInterviews(Arrays.asList(screeningInterview, technicalInterview, hiringManagerInterview));
+        job2.setInterviews(Arrays.asList(screeningInterview));
         Skill skill1 = new Skill("Coding", "4 years", "Backend expertise", "Java");
         Skill skill2 = new Skill("Management", "10 years", "Managing skill", "English");
-        job.setSkills(Arrays.asList(skill1, skill2));
+        Skill skill3 = new Skill("Designing", "5 years", "Designing skill", "CSS/HTML");
+        Skill skill4 = new Skill("Quality Assurance", "2 years", "QC skill", "English");
+        job1.setSkills(Arrays.asList(skill1, skill3));
+        job2.setSkills(Arrays.asList(skill2, skill4));
 
         Company company = new Company("Google Technology LLC", new Address("1000 N 4th street", "Fairfield", "52557", "IA"));
 
@@ -34,24 +60,13 @@ public class Main {
         recruiter.setClients(Arrays.asList(client1, client2));
         em.persist(recruiter);
 
-        job.setCompany(company);
-        Application application = new Application(new Date(), "2.0", job);
-        em.persist(application);
+        job1.setCompany(company);
+        Application application1 = new Application(new Date(), "2.0", job1);
+        Application application2 = new Application(new Date(), "3.0", job2);
+        em.persist(application1);
+        em.persist(application2);
 
 
-        ScreeningInterview screeningInterview =
-                new ScreeningInterview(new Date(), "6418191456", "smaka@miu.edu", "sujan", "passed");
-        em.persist(screeningInterview);
 
-        TechnicalInterview technicalInterview =
-                new TechnicalInterview(new Date(), "6418191456", "smaka@miu.edu", 20, Location.IN_PERSON, Arrays.asList(new Question("What is your weakness?"), new Question("What is your strength?")));
-        em.persist(technicalInterview);
-
-        HiringManagerInterview hiringManagerInterview =
-                new HiringManagerInterview(new Date(), "6418191456", "smaka@miu.edu", 10, new Date());
-        em.persist(hiringManagerInterview);
-        tx.commit();
-        em.close();
-        emf.close();
     }
 }
