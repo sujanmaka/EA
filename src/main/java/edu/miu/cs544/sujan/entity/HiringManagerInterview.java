@@ -1,6 +1,7 @@
 package edu.miu.cs544.sujan.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -11,13 +12,13 @@ public class HiringManagerInterview extends Interview {
     private Long id;
 
     private int teamSize;
-    private Date startDate;
+    private LocalDate startDate;
 
     public HiringManagerInterview() {
         super();
     }
 
-    public HiringManagerInterview(Date date, String phone, String email, int teamSize, Date startDate) {
+    public HiringManagerInterview(LocalDate date, String phone, String email, int teamSize, LocalDate startDate) {
         super(date, phone, email);
         this.teamSize = teamSize;
         this.startDate = startDate;

@@ -18,4 +18,11 @@ public class Recruiter extends Company {
     public void setClients(List<Client> clients) {
         this.clients = clients;
     }
+
+    @Override
+    public String toString() {
+        return "Recruiter{" +
+                "clients=" + clients +
+                '}';
+    }
 }

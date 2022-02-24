@@ -1,6 +1,7 @@
 package edu.miu.cs544.sujan.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -9,7 +10,7 @@ public class Application {
     @GeneratedValue
     private Long id;
 
-    private Date date;
+    private LocalDate date;
     private String resumeVersion;
 
     @OneToOne(cascade = CascadeType.PERSIST, targetEntity = Job.class)
@@ -18,9 +19,19 @@ public class Application {
     public Application() {
     }
 
-    public Application(Date date, String resumeVersion, Job job) {
+    public Application(LocalDate date, String resumeVersion, Job job) {
         this.date = date;
         this.resumeVersion = resumeVersion;
         this.job = job;
+    }
+
+    @Override
+    public String toString() {
+        return "Application{" +
+                "id=" + id +
+                ", date=" + date +
+                ", resumeVersion='" + resumeVersion + '\'' +
+                ", job=" + job +
+                '}';
     }
 }

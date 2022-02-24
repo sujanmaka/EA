@@ -1,6 +1,7 @@
 package edu.miu.cs544.sujan.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -17,7 +18,7 @@ public class ScreeningInterview extends Interview {
         super();
     }
 
-    public ScreeningInterview(Date date, String phone, String email, String name, String result) {
+    public ScreeningInterview(LocalDate date, String phone, String email, String name, String result) {
         super(date, phone, email);
         this.name = name;
         this.result = result;

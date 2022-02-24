@@ -26,4 +26,15 @@ public class Skill {
         this.description = description;
         this.language = language;
     }
+
+    @Override
+    public String toString() {
+        return "Skill{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", experience='" + experience + '\'' +
+                ", description='" + description + '\'' +
+                ", language='" + language + '\'' +
+                '}';
+    }
 }

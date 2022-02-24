@@ -38,4 +38,16 @@ public class Job {
     public void setInterviews(List<Interview> interviews) {
         this.interviews = interviews;
     }
+
+    @Override
+    public String toString() {
+        return "Job{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", salary=" + salary +
+                ", skills=" + skills +
+                ", company=" + company +
+                ", interviews=" + interviews +
+                '}';
+    }
 }
