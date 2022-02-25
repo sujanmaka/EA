@@ -11,6 +11,9 @@ public class ScreeningInterview extends Interview {
     @GeneratedValue
     private Long id;
 
+    @Version
+    private int version;
+
     private String name;
     private String result;
 

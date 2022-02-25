@@ -11,6 +11,9 @@ public class Company {
     @GeneratedValue
     private Long id;
 
+    @Version
+    private int version;
+
     private String name;
     @Embedded
     private Address address;

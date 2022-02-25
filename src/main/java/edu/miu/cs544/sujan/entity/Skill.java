@@ -1,9 +1,6 @@
 package edu.miu.cs544.sujan.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "skill")
@@ -11,6 +8,9 @@ public class Skill {
     @Id
     @GeneratedValue
     private Long id;
+
+    @Version
+    private int version;
 
     private String name;
     private String experience;

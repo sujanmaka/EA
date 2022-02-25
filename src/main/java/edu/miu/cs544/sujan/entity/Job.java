@@ -9,6 +9,9 @@ public class Job {
     @GeneratedValue
     private Long id;
 
+    @Version
+    private int version;
+
     private String title;
     private double salary;
     @OneToMany(cascade = CascadeType.PERSIST,targetEntity = Skill.class)
@@ -25,6 +28,10 @@ public class Job {
     public Job(String title, double salary) {
         this.title = title;
         this.salary = salary;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void setSkills(List<Skill> skills) {

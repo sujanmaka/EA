@@ -11,6 +11,9 @@ public class HiringManagerInterview extends Interview {
     @GeneratedValue
     private Long id;
 
+    @Version
+    private int version;
+
     private int teamSize;
     private LocalDate startDate;
 

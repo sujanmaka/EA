@@ -14,6 +14,9 @@ public class TechnicalInterview extends Interview {
     @GeneratedValue
     private Long id;
 
+    @Version
+    private int version;
+
     private int duration;
     @Enumerated(EnumType.STRING)
     private Location location;

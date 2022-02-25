@@ -89,6 +89,8 @@ public class Main {
         Query jpqlQuery2 = em.createQuery(query6, Job.class);
         System.out.println(jpqlQuery2.getResultList());
 
+//        Job job = em.find(Job.class, 65L);
+//        job.setTitle("Senior manager from Kazakhsthan");
 //        setData(em);
         tx.commit();
         em.close();

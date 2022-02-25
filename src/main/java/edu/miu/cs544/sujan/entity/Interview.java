@@ -11,6 +11,10 @@ public abstract class Interview {
     @Id
     @GeneratedValue
     private Long id;
+
+    @Version
+    private int version;
+
     private LocalDate date;
     private String phone;
     private String email;

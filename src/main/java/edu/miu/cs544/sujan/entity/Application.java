@@ -10,6 +10,9 @@ public class Application {
     @GeneratedValue
     private Long id;
 
+    @Version
+    private int version;
+
     private LocalDate date;
     private String resumeVersion;
 
